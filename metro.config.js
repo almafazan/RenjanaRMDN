@@ -37,7 +37,7 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
   }
 
   // Exclude @iabtcf/core from all platforms to prevent resolution errors
-  if (moduleName === "@iabtcf/core") {
+  if (moduleName === "@iabtcf/core" || moduleName.includes("@iabtcf/core")) {
     return {
       type: "empty",
     };

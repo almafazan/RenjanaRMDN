@@ -40,10 +40,9 @@ interface DailyPlansTabProps {
 }
 
 // Demo Rewarded Ad ID (use your real ad unit ID in production)
-const adUnitId =
-  __DEV__ && TestIds?.REWARDED
-    ? TestIds.REWARDED
-    : "ca-app-pub-3940256099942544/5224354917";
+const adUnitId = __DEV__
+  ? TestIds?.REWARDED || "ca-app-pub-3940256099942544/5224354917"
+  : "ca-app-pub-3940256099942544/5224354917";
 
 const rewardedAd = RewardedAd
   ? RewardedAd.createForAdRequest(adUnitId, {
